@@ -115,6 +115,7 @@ LOCAL_SRC_FILES := \
         dsp/dec_clip_tables.c \
         dsp/dec_mips32.c \
         dsp/dec_mips_dsp_r2.c \
+        dsp/dec_msa.c \
         dsp/dec_neon.c \
         dsp/dec_sse2.c \
         dsp/dec_sse41.c \
