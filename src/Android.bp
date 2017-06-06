@@ -88,9 +88,6 @@ cc_library_static {
         arm: {
             instruction_set: "arm",
         },
-        mips: {
-            cflags: ["-fno-integrated-as",],
-        },
     },
     cflags: [
         "-O2",
