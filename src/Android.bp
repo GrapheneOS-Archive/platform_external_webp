@@ -93,6 +93,8 @@ cc_library_static {
         "-O2",
         "-DANDROID",
         "-DWEBP_SWAP_16BIT_CSP",
+        "-Wall",
+        "-Werror",
     ],
 
     local_include_dirs: ["enc"],
@@ -174,6 +176,8 @@ cc_library_static {
         "-O2",
         "-DANDROID",
         "-DWEBP_SWAP_16BIT_CSP",
+        "-Wall",
+        "-Werror",
     ],
 
     local_include_dirs: ["dec"],
