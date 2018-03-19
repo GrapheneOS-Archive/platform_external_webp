@@ -109,6 +109,8 @@ cc_library_static {
     local_include_dirs: ["."],
     static_libs: ["webp-headers"],
     export_static_lib_headers: ["webp-headers"],
+
+    sdk_version: "9",
 }
 
 //##############################################
