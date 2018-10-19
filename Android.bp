@@ -16,6 +16,7 @@
 
 cc_library_static {
     name: "webp-headers",
+    host_supported: true,
     export_include_dirs: ["include"],
     sdk_version: "9",
 }
@@ -24,6 +25,7 @@ cc_library_static {
 
 cc_library_static {
     name: "libwebp-encode",
+    host_supported: true,
     srcs: [
         "src/dsp/alpha_processing.c",
         "src/dsp/alpha_processing_mips_dsp_r2.c",
@@ -116,6 +118,7 @@ cc_library_static {
 
 cc_library_static {
     name: "libwebp-decode",
+    host_supported: true,
     srcs: [
         "src/dec/alpha_dec.c",
         "src/dec/buffer_dec.c",
