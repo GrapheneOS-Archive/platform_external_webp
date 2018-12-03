@@ -19,6 +19,11 @@ cc_library_static {
     host_supported: true,
     export_include_dirs: ["include"],
     sdk_version: "9",
+    target: {
+        windows: {
+            enabled: true,
+        },
+    },
 }
 
 //##############################################
@@ -98,6 +103,7 @@ cc_library_static {
             instruction_set: "arm",
         },
     },
+
     cflags: [
         "-O2",
         "-DANDROID",
@@ -111,6 +117,12 @@ cc_library_static {
     export_static_lib_headers: ["webp-headers"],
 
     sdk_version: "9",
+
+    target: {
+        windows: {
+            enabled: true,
+        },
+    },
 }
 
 //##############################################
@@ -187,6 +199,7 @@ cc_library_static {
             instruction_set: "arm",
         },
     },
+
     cflags: [
         "-O2",
         "-DANDROID",
@@ -200,4 +213,10 @@ cc_library_static {
     export_static_lib_headers: ["webp-headers"],
 
     sdk_version: "9",
+
+    target: {
+        windows: {
+            enabled: true,
+        },
+    },
 }
