@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+bug_component_id = 48069
+
+fuzz_email_cc = ["jzern@google.com"]
+
 //##############################################
 
 cc_library_static {
@@ -211,4 +215,103 @@ cc_library_static {
             enabled: true,
         },
     },
+}
+
+cc_defaults {
+    name: "libwebp_fuzzer_defaults",
+    host_supported: true,
+    native_coverage: true,
+
+    local_include_dirs: [
+        ".",
+        "src",
+    ],
+
+    fuzz_config: {
+        cc: fuzz_email_cc,
+        componentid: bug_component_id,
+    },
+
+    corpus: ["fuzz_seed_corpus/*"],
+}
+
+cc_fuzz {
+    name: "libwebp_advanced_api_fuzzer",
+    defaults: ["libwebp_fuzzer_defaults"],
+
+    srcs: [
+        "tests/fuzzer/advanced_api_fuzzer.c",
+    ],
+
+    static_libs: [
+        "libwebp-decode",
+    ],
+}
+
+cc_fuzz {
+    name: "libwebp_animation_api_fuzzer",
+    defaults: ["libwebp_fuzzer_defaults"],
+
+    srcs: [
+        "tests/fuzzer/animation_api_fuzzer.c",
+    ],
+
+    static_libs: [
+        "libwebp-decode",
+    ],
+}
+
+cc_fuzz {
+    name: "libwebp_animencoder_fuzzer",
+    defaults: ["libwebp_fuzzer_defaults"],
+
+    srcs: [
+        "tests/fuzzer/animencoder_fuzzer.cc",
+    ],
+
+    static_libs: [
+        "libwebp-decode",
+        "libwebp-encode",
+    ],
+}
+
+cc_fuzz {
+    name: "libwebp_enc_dec_fuzzer",
+    defaults: ["libwebp_fuzzer_defaults"],
+
+    srcs: [
+        "tests/fuzzer/enc_dec_fuzzer.cc",
+    ],
+
+    static_libs: [
+        "libwebp-decode",
+        "libwebp-encode",
+    ],
+}
+
+cc_fuzz {
+    name: "libwebp_mux_demux_api_fuzzer",
+    defaults: ["libwebp_fuzzer_defaults"],
+
+    srcs: [
+        "tests/fuzzer/mux_demux_api_fuzzer.c",
+    ],
+
+    static_libs: [
+        "libwebp-decode",
+        "libwebp-encode",
+    ],
+}
+
+cc_fuzz {
+    name: "libwebp_simple_api_fuzzer",
+    defaults: ["libwebp_fuzzer_defaults"],
+
+    srcs: [
+        "tests/fuzzer/simple_api_fuzzer.c",
+    ],
+
+    static_libs: [
+        "libwebp-decode",
+    ],
 }
