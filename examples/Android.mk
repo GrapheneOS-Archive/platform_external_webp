@@ -13,6 +13,9 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../src
 
 LOCAL_MODULE := example_util
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_STATIC_LIBRARY)
 
 ################################################################################
@@ -30,6 +33,9 @@ LOCAL_STATIC_LIBRARIES := example_util imageio_util imagedec webpdemux webp
 
 LOCAL_MODULE := cwebp
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_EXECUTABLE)
 
 ################################################################################
@@ -44,6 +50,9 @@ LOCAL_CFLAGS := $(WEBP_CFLAGS)
 LOCAL_STATIC_LIBRARIES := example_util imagedec imageenc webpdemux webp
 LOCAL_MODULE := dwebp
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_EXECUTABLE)
 
 ################################################################################
@@ -59,6 +68,9 @@ LOCAL_STATIC_LIBRARIES := example_util imageio_util webpmux webp
 
 LOCAL_MODULE := webpmux_example
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_EXECUTABLE)
 
 ################################################################################
@@ -75,6 +87,9 @@ LOCAL_STATIC_LIBRARIES := example_util imageio_util imagedec webpmux webpdemux \
 
 LOCAL_MODULE := img2webp_example
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_EXECUTABLE)
 
 ################################################################################
@@ -90,4 +105,7 @@ LOCAL_STATIC_LIBRARIES := example_util imageio_util webp
 
 LOCAL_MODULE := webpinfo_example
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_EXECUTABLE)
