@@ -13,6 +13,9 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../src
 
 LOCAL_MODULE := imageio_util
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_STATIC_LIBRARY)
 
 ################################################################################
@@ -35,6 +38,9 @@ LOCAL_STATIC_LIBRARIES := imageio_util
 
 LOCAL_MODULE := imagedec
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_STATIC_LIBRARY)
 
 ################################################################################
@@ -51,4 +57,7 @@ LOCAL_STATIC_LIBRARIES := imageio_util
 
 LOCAL_MODULE := imageenc
 
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
+LOCAL_LICENSE_CONDITIONS := notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_STATIC_LIBRARY)
