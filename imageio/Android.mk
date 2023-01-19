@@ -1,3 +1,5 @@
+# Ignore this file during non-NDK builds.
+ifdef NDK_ROOT
 LOCAL_PATH := $(call my-dir)
 
 ################################################################################
@@ -61,3 +63,4 @@ LOCAL_LICENSE_KINDS := SPDX-license-identifier-BSD
 LOCAL_LICENSE_CONDITIONS := notice
 LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../COPYING $(LOCAL_PATH)/../NOTICE $(LOCAL_PATH)/../PATENTS
 include $(BUILD_STATIC_LIBRARY)
+endif  # NDK_ROOT
