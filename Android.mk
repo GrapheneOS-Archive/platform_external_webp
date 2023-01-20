@@ -1,9 +1,5 @@
-# Note that the platform modules are defined in the Android.bp. This file is
-# used for the NDK.
-
-# If we're being invoked from ndk-build, we'll have NDK_ROOT defined.
+# Ignore this file during non-NDK builds.
 ifdef NDK_ROOT
-
 LOCAL_PATH := $(call my-dir)
 
 WEBP_CFLAGS := -Wall -DANDROID -DHAVE_MALLOC_H -DHAVE_PTHREAD -DWEBP_USE_THREAD
@@ -41,6 +37,7 @@ endif
 
 sharpyuv_srcs := \
     sharpyuv/sharpyuv.c \
+    sharpyuv/sharpyuv_cpu.c \
     sharpyuv/sharpyuv_csp.c \
     sharpyuv/sharpyuv_dsp.c \
     sharpyuv/sharpyuv_gamma.c \
@@ -230,7 +227,7 @@ LOCAL_SRC_FILES := \
     $(utils_enc_srcs) \
 
 LOCAL_CFLAGS := $(WEBP_CFLAGS)
-LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/src
+LOCAL_EXPORT_C_INCLUDES += $(LOCAL_PATH)/src $(LOCAL_PATH)
 
 # prefer arm over thumb mode for performance gains
 LOCAL_ARM_MODE := arm
@@ -309,5 +306,4 @@ include $(WEBP_SRC_PATH)/examples/Android.mk
 ifeq ($(USE_CPUFEATURES),yes)
   $(call import-module,android/cpufeatures)
 endif
-
-endif
+endif  # NDK_ROOT
